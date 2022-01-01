@@ -1,3 +1,6 @@
 hr {
     margin: auto;
 }
+div.container-fluid {
+    height: 400px;
+}
