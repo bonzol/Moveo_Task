@@ -13,7 +13,6 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { MainComponent } from './components/main/main.component';
-import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
@@ -26,7 +25,6 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     UserDetailsComponent,
     MainComponent,
-    AboutComponent,
     FooterComponent
   ],
   imports: [
