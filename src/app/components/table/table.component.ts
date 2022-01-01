@@ -4,7 +4,6 @@ import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { Sort } from '@angular/material/sort';
 import { ViewEncapsulation } from '@angular/core';
-import $ from "jquery";
 
 
 @Component({
