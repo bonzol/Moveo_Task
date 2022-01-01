@@ -2,7 +2,7 @@ This app is a home task for MoveoGroup.
 This is an Angular app, including JavaScript, HTML, CSS, TypeScript, Bootstrap and Angular Material.
 The app uses https://randomuser.me/ free API, and https://www.mapbox.com/.
 
-The app fetch endless random users, and features their data and location.
+The app fetches endless random users, and features their data and location.
 
 You can find the deployed app here:
 https://moveotaskalon.netlify.app
@@ -10,11 +10,11 @@ https://moveotaskalon.netlify.app
 Overall Description:
 
 The app has a LayoutComponent, and inside it header, main and footer components.
-The Header is a collapse navbar, and the footer has some text.
+The Header is a collapsible navbar, and the footer has some text.
 The Main component contains the main component, the Table!
-The table can be sort by clicking the diffrent heads (name, email, gender and age).
-You can send a mail to each use by clicking the email address.
-Beneath the table there is a pagination control for page number. You can go to any page number (bigger then 0).
+The table can be sorted by clicking the different heads (name, email, gender and age).
+You can send an email to each user by clicking the email address.
+Beneath the table there is a pagination control for page number. You can go to any page number (bigger than 0).
 By clicking the user row you will redirect to the User Details page. 
 The User Details component presents the data from the table, and additional info (state, city and street). also there is a map with a marker, corresponding to the coordinates of the user location.
 The actual fetching accruing in the User Service, which is injected in the constructor components.
