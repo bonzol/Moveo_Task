@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
-import { UserService } from 'src/app/services/user.service';
 import { environment } from '../../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
 
@@ -12,18 +10,16 @@ import * as mapboxgl from 'mapbox-gl';
 
 export class UserDetailsComponent implements OnInit {
 
-
-  user = new User();
   map!: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = NaN;
   lng = NaN;
+  user= JSON.parse(sessionStorage.user);
   
   constructor() { }
   
   ngOnInit(): void {
     
-    this.user= JSON.parse(sessionStorage.user);
 
     this.lat = this.user.lat;
     this.lng = this.user.lng;

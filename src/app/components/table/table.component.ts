@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
@@ -19,39 +19,35 @@ export class TableComponent implements OnInit {
   public page = NaN;
   
   constructor(private router:Router, private userService:UserService) { }
-  
-  
-  
-  ngOnInit(): void {
-    
+
+  ngOnInit(): void { 
     if(sessionStorage.getItem('page')==undefined) {
       sessionStorage.setItem('page', '1');
     }
     this.page = Number(sessionStorage.getItem('page'));
     this.getUsers(this.page);
-    
-    
   }
    
   getUsers(page:number) {
     this.userService.getUsers(page).subscribe(
       (data)=>{
         data.results.forEach((person: any) => {
-                let user = new User();
-                user.fullName = person.name.first+" "+person.name.last;
-                user.name = person.name.first.charAt(0)+"."+person.name.last;
-                user.email = person.email;
-                user.gender = person.gender;
-                user.age = person.dob.age;
-                user.pic = person.picture.medium;
-                user.picBig = person.picture.large;
-                user.username = person.login.username;
-                user.state = person.location.state;
-                user.city = person.location.city;
-                user.street = person.location.street.name + " " + person.location.street.number;
-                user.lat = parseFloat(person.location.coordinates.latitude) ;
-                user.lng = parseFloat(person.location.coordinates.longitude);
-                this.users.push(user);
+            let user = {
+              fullName: person.name.first+" "+person.name.last,
+              name: person.name.first.charAt(0)+"."+person.name.last,
+              email: person.email,
+              gender: person.gender,
+              age: person.dob.age,
+              pic: person.picture.medium,
+              picBig: person.picture.large,
+              username: person.login.username,
+              state: person.location.state,
+              city: person.location.city,
+              street: person.location.street.name + " " + person.location.street.number,
+              lat: parseFloat(person.location.coordinates.latitude) ,
+              lng: parseFloat(person.location.coordinates.longitude)
+          }
+          this.users.push(user);
               });
               this.sortedData = this.users.slice();
       },
