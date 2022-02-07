@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { TableComponent } from './components/table/table.component';
@@ -33,7 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSortModule
+    MatSortModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [],

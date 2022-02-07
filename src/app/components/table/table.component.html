@@ -1,7 +1,16 @@
 <br>
 
+
 <div class="container">
-<table matSort (matSortChange)="sortData($event)" class="table table-striped table-hover table-sm">
+  <div *ngIf="isLoading" 
+  style="display: flex; justify-content: center; align-items: center;">
+  <mat-progress-spinner 
+   color="primary" 
+   mode="indeterminate">
+  </mat-progress-spinner>
+  </div>
+  
+  <table matSort (matSortChange)="sortData($event)" class="table table-striped table-hover table-sm">
     <thead>
       <tr>
         <th class="col-1" scope="col"></th>

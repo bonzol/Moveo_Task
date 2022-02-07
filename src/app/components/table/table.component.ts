@@ -20,6 +20,8 @@ export class TableComponent implements OnInit {
   
   constructor(private router:Router, private userService:UserService) { }
 
+  isLoading = true;
+
   ngOnInit(): void { 
     if(sessionStorage.getItem('page')==undefined) {
       sessionStorage.setItem('page', '1');
@@ -29,6 +31,7 @@ export class TableComponent implements OnInit {
   }
    
   getUsers(page:number) {
+    this.isLoading = true;
     this.userService.getUsers(page).subscribe(
       (data)=>{
         data.results.forEach((person: any) => {
@@ -50,6 +53,7 @@ export class TableComponent implements OnInit {
           this.users.push(user);
               });
               this.sortedData = this.users.slice();
+              this.isLoading = false;
       },
       (err)=>{
         console.log(err.error);
